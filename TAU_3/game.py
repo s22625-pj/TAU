@@ -66,15 +66,19 @@ game.generate_board()
 game.display_board()
 
 # Manualne sterowanie ruchem
-while True:
-    move_direction = input("Podaj kierunek ruchu (up/down/left/right): ")
-    result = game.move(move_direction)
+def main():
+    while True:
+        move_direction = input("Podaj kierunek ruchu (up/down/left/right): ")
+        result = game.move(move_direction)
 
-    if result == 'goal_reached':
-        game.display_board()
-        print("Gratulacje! Dotarłeś do celu.")
-        break
-    elif result == 'success':
-        game.display_board()
-    else:
-        print("Niedozwolony ruch. Spróbuj ponownie.")
+        if result == 'goal_reached':
+            game.display_board()
+            print("Gratulacje! Dotarłeś do celu.")
+            break
+        elif result == 'success':
+            game.display_board()
+        else:
+            print("Niedozwolony ruch. Spróbuj ponownie.")
+
+if __name__ == "__main__":
+    main()
